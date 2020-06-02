@@ -8,10 +8,31 @@ router.get('/mensajes', function (req, res) {
         mensaje: 'Todo está bien!'
     });
 });
-router.post('/mensajes', function (req, res) {
+/*
+router.post('/mensajes', (req, res)=>{
     res.json({
         ok: true,
         mensaje: 'POST - Listo'
+    })
+});*/
+router.post('/mensajes', function (req, res) {
+    var cuerpo = req.body.cuerpo;
+    var de = req.body.de;
+    res.json({
+        ok: true,
+        cuerpo: cuerpo,
+        de: de
+    });
+});
+router.post('/mensajes/:id', function (req, res) {
+    var cuerpo = req.body.cuerpo;
+    var de = req.body.de;
+    var id = req.params.id;
+    res.json({
+        ok: true,
+        cuerpo: cuerpo,
+        de: de,
+        id: id
     });
 });
 exports.default = router;
