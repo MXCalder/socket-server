@@ -5,7 +5,8 @@ var server_1 = require("./classes/server");
 var router_1 = require("./routes/router");
 var bodyParser = require("body-parser");
 var cors = require("cors");
-var server = new server_1.default();
+// const server = new Server();
+var server = server_1.default.instance;
 // BodyParser
 server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());

@@ -4,7 +4,8 @@ import router from "./routes/router";
 import bodyParser = require('body-parser');
 import cors = require("cors");
 
-const server = new Server();
+// const server = new Server();
+const server = Server.instance;
 
 // BodyParser
 server.app.use( bodyParser.urlencoded({ extended: true }) );

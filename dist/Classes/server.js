@@ -12,6 +12,13 @@ var Server = (function () {
         this.io = socketIO(this.httpServer);
         this.escucharSockets();
     }
+    Object.defineProperty(Server, "instance", {
+        get: function () {
+            return this._instance || (this._instance = new this());
+        },
+        enumerable: true,
+        configurable: true
+    });
     Server.prototype.start = function (callback) {
         // this.app.listen( this.port, callback );
         this.httpServer.listen(this.port, callback);
