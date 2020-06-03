@@ -1,5 +1,6 @@
 import express = require('express');
 import { SERVER_PORT } from "../global/environment";
+import socketIO from 'socket.io';
 
 export default class Server {
     public app: express.Application;
